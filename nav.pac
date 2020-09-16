@@ -8,15 +8,19 @@ function FindProxyForURL(url, host)
       shExpMatch(host, "vera.adeo.no") ||
       shExpMatch(host, "jira.adeo.no") ||
       shExpMatch(host, "grafana.adeo.no") ||
+      shExpMatch(host, "*.dev-fss.nais.io") ||
+      shExpMatch(host, "*.dev-sbs.nais.io") ||
       shExpMatch(host, "jenkins*.adeo.no") ||
+      shExpMatch(host, "www-q1.nav.no") ||
       shExpMatch(host, "*jenkins.adeo.no")) {
     return "SOCKS localhost:14122";
   } else if (shExpMatch(host, "*.dev-gcp.nais.io") ||
-             shExpMatch(host, "*.dev-nav.no") || 
+             shExpMatch(host, "*.dev-nav.no") ||
+             shExpMatch(host, "*.dev.nav.no") ||
              shExpMatch(host, "*.dev-adeo.no")) {
     return "SOCKS localhost:14134";
   } else if (shExpMatch(host, "*.prod-gcp.nais.io") ||
-             shExpMatch(host, "familie-prosessering.adeo.no") || 
+             shExpMatch(host, "familie-prosessering.adeo.no") ||
              shExpMatch(host, "basta.adeo.no") ||
              shExpMatch(host, "basta-frontend.adeo.no")) {
     return "SOCKS localhost:14135";
